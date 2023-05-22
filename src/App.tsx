@@ -6,19 +6,12 @@ function App() {
 
   const [selectButton, setSelectButton] = useState(false);
 
-  const handleOnClick = () => {
-    setSelectButton(!selectButton);
-  };
-
   return (
     <>
       <div>
         {selectButton === true && (
           <>
-            <Alert>
-              My alert
-              <Button color="close" onClick={() => handleOnClick()}></Button>
-            </Alert>
+            <Alert onClose={() => setSelectButton(false)}>My alert</Alert>
           </>
         )}
         <Button color="primary" onClick={() => setSelectButton(true)}>
